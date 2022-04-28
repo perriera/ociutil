@@ -1,0 +1,29 @@
+  //
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  //
+  // Special thanks to Dave Dumke, (david.dumke@nautel.com) of Nautel for piecing 
+  // together this lovely script as it saves so much time and energy.
+  //
+  // "install -d build; cd build; cmake ..; make",
+  // "install -d build; cd build; cmake -DPRODUCTION=true ..; make",
+  //
+  {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Build C++ project",
+        "type": "shell",
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "command": "bash",
+        "args": [
+          "-c",
+          "install -d build; cd build; cmake ..; make",
+        ]
+      }
+    ]
+  }
