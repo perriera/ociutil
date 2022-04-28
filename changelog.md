@@ -5,8 +5,8 @@
 > and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).</br>
 > To add a tag to the git repository do:
 >
-> > git tag -a v1.0.1 -m "Rebranded"</br>
-> > git push origin v1.0.1
+> > git tag -a v0.2.0 -m "Rebranded"</br>
+> > git push origin v0.2.0
 
 IMPORTANT:
 
@@ -86,7 +86,6 @@ Updated README.md accordingly</br>
 ### Removed
 - Conan package manager deprecated
 
-[unreleased]: https://github.com/perriera/ociutil/compare/v1.0.1...HEAD
-[1.0.1]: https://github.com/perriera/ociutil/compare/v1.0.0...v1.0.1
-[1.0.0]: https://github.com/perriera/ociutil/compare/v0.1.0...v1.0.0
+[unreleased]: https://github.com/perriera/ociutil/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/perriera/ociutil/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/perriera/ociutil/releases/tag/v0.1.0
