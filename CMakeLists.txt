@@ -10,10 +10,10 @@ include(cmake/CPM.cmake)
 include(cmake/print.cmake)
 include(cmake/utils.cmake)
 include(cmake/FindOracle.cmake)
-extras_oci_get_version()
+ociutil_get_version()
 project(
-  extras_oci
-  VERSION ${EXTRAS_OCI_VERSION}
+  ociutil
+  VERSION ${OCIUTIL_VERSION}
   LANGUAGES CXX
 )
 
@@ -57,19 +57,19 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -pedantic -fPIC")
 #
 # NOTE: add additional project options
 #
-option(EXTRAS_OCI_PRODUCTION "Production build" OFF)
+option(OCIUTIL_PRODUCTION "Production build" OFF)
 
 #
-# MAKE_EXTRAS_OCI_LIBRARY_ONLY
+# MAKE_OCIUTIL_LIBRARY_ONLY
 #
 # Quite often when you include a library from a github project, (via CPM)
 # all you are interested in are the shared library files. When you use this
 # flag you have to set it on any executables (see below) that you setup
 # and/or wish to make optional. Mind you, this option has not been fully
-# tested for use with EXTRAS_OCI_PRODUCTION flag. So, there might be 
+# tested for use with OCIUTIL_PRODUCTION flag. So, there might be 
 # a hiccup in here that needs to be worked out, (reader beware).
 #
-# see also MAKE_EXTRAS_OCI_LIBRARY_TOOLS
+# see also MAKE_OCIUTIL_LIBRARY_TOOLS
 #
 # This second flag will allow both the shared libraries and any executatbles
 # (but not the unit tests) to be compiled.
@@ -77,11 +77,11 @@ option(EXTRAS_OCI_PRODUCTION "Production build" OFF)
 # Using these flags speeds up the CPM inclusions in other projects significantly.
 #
 
-message(STATUS "MAKE_EXTRAS_OCI_LIBRARY_ONLY is ${MAKE_EXTRAS_OCI_LIBRARY_ONLY}")
-if(MAKE_EXTRAS_OCI_LIBRARY_ONLY)
+message(STATUS "MAKE_OCIUTIL_LIBRARY_ONLY is ${MAKE_OCIUTIL_LIBRARY_ONLY}")
+if(MAKE_OCIUTIL_LIBRARY_ONLY)
   option(BUILD_TESTS "Build tests" OFF)
   option(DEBUG "Debug Build" OFF)
-  set(EXTRAS_OCI_TESTS OFF)
+  set(OCIUTIL_TESTS OFF)
   message(STATUS "BUILD_TESTS is ${BUILD_TESTS}")
   message(STATUS "DEBUG is ${DEBUG}")
 else()
@@ -91,17 +91,17 @@ else()
   message(STATUS "DEBUG is ${DEBUG}")
 
   #
-  # NOTE: Build defaults to production, cmake -DEXTRAS_OCI_PRODUCTION=OFF will build debug with tests
+  # NOTE: Build defaults to production, cmake -DOCIUTIL_PRODUCTION=OFF will build debug with tests
   #
-  if(NOT EXTRAS_OCI_PRODUCTION)
+  if(NOT OCIUTIL_PRODUCTION)
     print(STATUS "Building ${PROJECT_NAME}-${PROJECT_VERSION} [DEBUG]")
     set(CMAKE_BUILD_TYPE Debug)
-    set(EXTRAS_OCI_TESTS ON)
+    set(OCIUTIL_TESTS ON)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g")
   else()
     print(STATUS "Building ${PROJECT_NAME}-${PROJECT_VERSION} [RELEASE]")
-    set(EXTRAS_OCI_TESTS OFF)
+    set(OCIUTIL_TESTS OFF)
     set(CMAKE_BUILD_TYPE Release)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3")
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O3")
@@ -119,7 +119,7 @@ print(STATUS "CMAKE_C_FLAGS: ${CMAKE_C_FLAGS}")
 
 #
 # NOTE: "Include 3rd party libraries, Perry and I maintain an open-source extras C++ library, which
-# is used extensively in extras_oci, it comes bundled with spdlog, cpr, and nlohmann json. extras has
+# is used extensively in ociutil, it comes bundled with spdlog, cpr, and nlohmann json. extras has
 # project options that allow us to control how other libraries it includes are built. for example we
 # can tell extras to build spdlog as a static library (for faster compile times) by settings
 # MAKE_SPDLOG_SHARED OFF" -- Matt Williams, October, 2021
@@ -144,15 +144,15 @@ endif()
 #
 # HACK: glob src files and header files
 #
-file(GLOB_RECURSE EXTRAS_OCI_HEADERS CONFIGURE_DEPENDS "${INCLUDES}/${PROJECT_NAME}/*.hpp")
-file(GLOB_RECURSE EXTRAS_OCI_SOURCE CONFIGURE_DEPENDS "${SOURCES}/*.cpp")
+file(GLOB_RECURSE OCIUTIL_HEADERS CONFIGURE_DEPENDS "${INCLUDES}/${PROJECT_NAME}/*.hpp")
+file(GLOB_RECURSE OCIUTIL_SOURCE CONFIGURE_DEPENDS "${SOURCES}/*.cpp")
 
 #
 # NOTE: declare libraries here all source should be placed into a single library, (whether they be
 # shared or static)
 #
 
-add_library(${PROJECT_NAME} SHARED ${EXTRAS_OCI_HEADERS} ${EXTRAS_OCI_SOURCE})
+add_library(${PROJECT_NAME} SHARED ${OCIUTIL_HEADERS} ${OCIUTIL_SOURCE})
 target_include_directories(${PROJECT_NAME} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include" ${ORACLE_INCLUDE})
 target_link_libraries(${PROJECT_NAME} PRIVATE stdc++fs extras occi clntsh Threads::Threads)
 
@@ -160,12 +160,12 @@ target_link_libraries(${PROJECT_NAME} PRIVATE stdc++fs extras occi clntsh Thread
 # NOTE: declare unit test cases here all source should have adequate test cases whether they be mock
 # or unit tests, (or both)
 #
-if (NOT MAKE_EXTRAS_OCI_LIBRARY_ONLY)
-  if(EXTRAS_OCI_TESTS)
+if (NOT MAKE_OCIUTIL_LIBRARY_ONLY)
+  if(OCIUTIL_TESTS)
     print(STATUS "Building tests")
-    file(GLOB_RECURSE EXTRAS_OCI_TESTS CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/test/*.cpp")
+    file(GLOB_RECURSE OCIUTIL_TESTS CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/test/*.cpp")
     set(TEST_EXEC "run-unittests-${PROJECT_NAME}")
-    add_executable(${TEST_EXEC} ${EXTRAS_OCI_TESTS})
+    add_executable(${TEST_EXEC} ${OCIUTIL_TESTS})
     target_include_directories(${TEST_EXEC} PUBLIC ${INCLUDES} ${ORACLE_INCLUDE})
     target_link_libraries(${TEST_EXEC} PRIVATE ${PROJECT_NAME} stdc++fs extras occi clntsh Threads::Threads)
   endif()
@@ -177,10 +177,10 @@ endif()
 # includes ALL headers and sources under include/ and src/. So, to keep two or more main() 
 # declarations seperate, we place any sources that have a main() in the instances/ folder
 #
-if( NOT MAKE_EXTRAS_OCI_LIBRARY_ONLY OR MAKE_EXTRAS_OCI_LIBRARY_TOOLS)
-add_executable(extras_oci_app instances/main.cpp) 
-target_include_directories(extras_oci_app PUBLIC ${INCLUDES} ${ORACLE_INCLUDE})
-target_link_libraries(extras_oci_app PRIVATE ${PROJECT_NAME} stdc++fs extras occi clntsh Threads::Threads)
+if( NOT MAKE_OCIUTIL_LIBRARY_ONLY OR MAKE_OCIUTIL_LIBRARY_TOOLS)
+add_executable(ociutil_app instances/main.cpp) 
+target_include_directories(ociutil_app PUBLIC ${INCLUDES} ${ORACLE_INCLUDE})
+target_link_libraries(ociutil_app PRIVATE ${PROJECT_NAME} stdc++fs extras occi clntsh Threads::Threads)
 endif()
 
 #

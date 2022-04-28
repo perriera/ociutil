@@ -1,5 +1,5 @@
 
-# [(perriera) / extras_oci](https://github.com/perriera/extras_oci)
+# [(perriera) / ociutil](https://github.com/perriera/ociutil)
 
 ## How to setup a development environment (on Linux, Windows or Mac)
 
@@ -21,16 +21,16 @@
 
 ### Wish Case
 
- 1. [How to setup a development environment (on Linux, Windows or Mac)](https://github.com/perriera/extras_oci/blob/dev/docs/ENVIRONMENT.md)
- 2. [How to setup a Linux Platform (Ubuntu 20.04.4) on macOS (Parallels Desktop)](https://github.com/perriera/extras_oci/blob/dev/docs/ubuntu/macos/parallels/MACOS.md)
- 3. [How to setup a Linux Platform (Ubuntu 20.04.4) on Windows 10/11 (VirtualBox)](https://github.com/perriera/extras_oci/blob/dev/docs/VIRTUALBOX.md)
- 4. [How to setup a Linux Platform (Ubuntu 20.04.4) on Windows 10/11 (WSL/WSL2](https://github.com/perriera/extras_oci/blob/dev/docs/WSLWSL2.md)
- 5. [How to setup a Linux Platform (Ubuntu 20.04.4) on Linux](https://github.com/perriera/extras_oci/blob/dev/docs/LINUX.md)
+ 1. [How to setup a development environment (on Linux, Windows or Mac)](https://github.com/perriera/ociutil/blob/dev/docs/ENVIRONMENT.md)
+ 2. [How to setup a Linux Platform (Ubuntu 20.04.4) on macOS (Parallels Desktop)](https://github.com/perriera/ociutil/blob/dev/docs/ubuntu/macos/parallels/MACOS.md)
+ 3. [How to setup a Linux Platform (Ubuntu 20.04.4) on Windows 10/11 (VirtualBox)](https://github.com/perriera/ociutil/blob/dev/docs/VIRTUALBOX.md)
+ 4. [How to setup a Linux Platform (Ubuntu 20.04.4) on Windows 10/11 (WSL/WSL2](https://github.com/perriera/ociutil/blob/dev/docs/WSLWSL2.md)
+ 5. [How to setup a Linux Platform (Ubuntu 20.04.4) on Linux](https://github.com/perriera/ociutil/blob/dev/docs/LINUX.md)
 
 ### Next Steps
- 1. [How to install the tools necessary for C++11/17 projects](https://github.com/perriera/extras_oci/blob/dev/docs/INSTALL.md)
- 2. [How to clone your project (with this template)](https://github.com/perriera/extras_oci/blob/dev/docs/CLONE.md)
- 3. [How to setup your changelog.md](https://github.com/perriera/extras_oci/blob/dev/docs/CHANGELOG.md)
+ 1. [How to install the tools necessary for C++11/17 projects](https://github.com/perriera/ociutil/blob/dev/docs/INSTALL.md)
+ 2. [How to clone your project (with this template)](https://github.com/perriera/ociutil/blob/dev/docs/CLONE.md)
+ 3. [How to setup your changelog.md](https://github.com/perriera/ociutil/blob/dev/docs/CHANGELOG.md)
 
 ### Summary 
 > This has been a basic example of how to install this library on either Linux, Windows or Mac. 
@@ -40,5 +40,5 @@
 
 ### Copyright
 > Copyright 2022 EXPARX INCORPORATED ([exparx.com](https://www.exparx.com/))<br/>
-> [Open Source / MIT License](https://opensource.org/licenses/MIT) (see [LICENSE.md](https://github.com/perriera/extras_oci/blob/dev/LICENSE.md))<br/>
+> [Open Source / MIT License](https://opensource.org/licenses/MIT) (see [LICENSE.md](https://github.com/perriera/ociutil/blob/dev/LICENSE.md))<br/>
 

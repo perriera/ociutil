@@ -61,9 +61,9 @@ Assuming you have an iMac with Parallels Desktop installed
 > You do not need to use Ubuntu (or an iMac), (if you have some other hardware or software arrangement that is perfectly fine). As long as your system is supporting Linux kernel 5.13 or greater you should be able to use the tools necessary to compile a C++11/17 based project in a GUI environment capable of supporting Visual Studio Code (or similair tool).
 
 ### Summary 
-Now you have a platform with which to install the C++11/17 tools necessary for *(perriera) /  extras_oci* cloned projects.
+Now you have a platform with which to install the C++11/17 tools necessary for *(perriera) /  ociutil* cloned projects.
 
 ### Next Steps
- - [How to install the tools necessary for C++11/17 projects](https://github.com/perriera/extras_oci/blob/dev/docs/INSTALL.md)
+ - [How to install the tools necessary for C++11/17 projects](https://github.com/perriera/ociutil/blob/dev/docs/INSTALL.md)
 
 

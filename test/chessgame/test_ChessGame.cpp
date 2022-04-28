@@ -17,7 +17,7 @@
  */
 
 #include <iostream>
-#include <extras_oci/game/ChessGame.hpp>
+#include <ociutil/game/ChessGame.hpp>
 
 #include "../vendor/catch.hpp"
 

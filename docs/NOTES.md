@@ -1,6 +1,6 @@
-# perriera/extras_oci
+# perriera/ociutil
 
-Welcome to the perriera/extras_oci project.
+Welcome to the perriera/ociutil project.
 
 [![CMake](https://github.com/mattcoding4days/extras/actions/workflows/cmake.yml/badge.svg?branch=dev)](https://github.com/mattcoding4days/extras/actions/workflows/cmake.yml)
 
@@ -19,7 +19,7 @@ To use this template you will need a Linux environment, (Ubuntu is idea).
 
 1.  [Install pip](https://linuxize.com/post/how-to-install-pip-on-ubuntu-18.04/), (either pip 2 or pip 3)
 2.  [Install cmake](https://cmake-python-distributions.readthedocs.io/en/latest/installation.html) using pip, (cmake 3.2.1 or better required)
-3.  Create project on [Github.com](https://github.com) using **perriera/extras_oci** out of the box, (or as a Github template).
+3.  Create project on [Github.com](https://github.com) using **perriera/ociutil** out of the box, (or as a Github template).
 
 Once you have established these THREE STEPS you may do the following
 
@@ -30,53 +30,53 @@ Once you have established these THREE STEPS you may do the following
     cmake ..
     make
     cd ..
-    build/run-unittests-extras_oci
+    build/run-unittests-ociutil
 
 If you have done everything correctly, you will see a Catch2 diagnostic with all green, (similar to the following):
 
-    perry@ubuntu:~/Projects/extras_oci$ build/run-unittests-extras_oci
+    perry@ubuntu:~/Projects/ociutil$ build/run-unittests-ociutil
     ===============================================================================
     All tests passed (1 assertion in 2 test cases)
 
 **Recommended**: The project now has been successfully created in git already. So add your first github tag:
 
-    git tag -a v0.1.0 -m "Created extras_oci"
+    git tag -a v0.1.0 -m "Created ociutil"
     git push origin v0.1.0
 
 However, you not done yet:
 
 Inside your favorite editor, (or search & replace command utility):
 
-1.  Global search and replace **extras_oci** to <project_name> (case sensitive)
-2.  Global search and replace **EXTRAS_OCI** to <PROJECT_NAME> (case sensitive)
-3.  Change directory name '**include/extras_oci**' to '**include/<project_name>**'
+1.  Global search and replace **ociutil** to <project_name> (case sensitive)
+2.  Global search and replace **OCIUTIL** to <PROJECT_NAME> (case sensitive)
+3.  Change directory name '**include/ociutil**' to '**include/<project_name>**'
 4.  Change the links found in changelog.md such that they begin at 0.1.0 for your project.
 
 For example, instead of:
 
-    [Unreleased]: https://github.com/perriera/extras_oci/compare/v0.7.0...HEAD
-    [0.7.0]: https://github.com/perriera/extras_oci/compare/v0.6.6...v0.7.0
-    [0.6.6]: https://github.com/perriera/extras_oci/compare/v0.5.6...v0.6.0
-    [0.5.6]: https://github.com/perriera/extras_oci/compare/v0.5.5...v0.5.6
-    [0.5.5]: https://github.com/perriera/extras_oci/compare/v0.5.4...v0.5.5
-    [0.5.4]: https://github.com/perriera/extras_oci/compare/v0.5.3...v0.5.4
-    [0.5.3]: https://github.com/perriera/extras_oci/compare/v0.5.2...v0.5.3
-    [0.5.2]: https://github.com/perriera/extras_oci/compare/v0.5.1...v0.5.2
-    [0.5.1]: https://github.com/perriera/extras_oci/compare/v0.5.0...v0.5.1
-    [0.5.0]: https://github.com/perriera/extras_oci/compare/v0.4.2...v0.5.0
-    [0.4.2]: https://github.com/perriera/extras_oci/compare/v0.4.1...v0.4.2
-    [0.4.1]: https://github.com/perriera/extras_oci/compare/v0.4.0...v0.4.1
-    [0.4.0]: https://github.com/perriera/extras_oci/compare/v0.3.1...v0.4.0
-    [0.3.1]: https://github.com/perriera/extras_oci/compare/v0.3.0...v0.3.1
-    [0.3.0]: https://github.com/perriera/extras_oci/compare/v0.2.0...v0.3.0
-    [0.2.0]: https://github.com/perriera/extras_oci/compare/v0.1.0...v0.2.0
-    [0.1.0]: https://github.com/perriera/extras_oci/releases/tag/v0.1.0
+    [Unreleased]: https://github.com/perriera/ociutil/compare/v0.7.0...HEAD
+    [0.7.0]: https://github.com/perriera/ociutil/compare/v0.6.6...v0.7.0
+    [0.6.6]: https://github.com/perriera/ociutil/compare/v0.5.6...v0.6.0
+    [0.5.6]: https://github.com/perriera/ociutil/compare/v0.5.5...v0.5.6
+    [0.5.5]: https://github.com/perriera/ociutil/compare/v0.5.4...v0.5.5
+    [0.5.4]: https://github.com/perriera/ociutil/compare/v0.5.3...v0.5.4
+    [0.5.3]: https://github.com/perriera/ociutil/compare/v0.5.2...v0.5.3
+    [0.5.2]: https://github.com/perriera/ociutil/compare/v0.5.1...v0.5.2
+    [0.5.1]: https://github.com/perriera/ociutil/compare/v0.5.0...v0.5.1
+    [0.5.0]: https://github.com/perriera/ociutil/compare/v0.4.2...v0.5.0
+    [0.4.2]: https://github.com/perriera/ociutil/compare/v0.4.1...v0.4.2
+    [0.4.1]: https://github.com/perriera/ociutil/compare/v0.4.0...v0.4.1
+    [0.4.0]: https://github.com/perriera/ociutil/compare/v0.3.1...v0.4.0
+    [0.3.1]: https://github.com/perriera/ociutil/compare/v0.3.0...v0.3.1
+    [0.3.0]: https://github.com/perriera/ociutil/compare/v0.2.0...v0.3.0
+    [0.2.0]: https://github.com/perriera/ociutil/compare/v0.1.0...v0.2.0
+    [0.1.0]: https://github.com/perriera/ociutil/releases/tag/v0.1.0
 
 Make it more like:
 
-    [Unreleased]: https://github.com/perriera/extras_oci/compare/v0.2.0...HEAD
-    [0.2.0]: https://github.com/perriera/extras_oci/compare/v0.1.0...v0.2.0
-    [0.1.0]: https://github.com/perriera/extras_oci/releases/tag/v0.1.0
+    [Unreleased]: https://github.com/perriera/ociutil/compare/v0.2.0...HEAD
+    [0.2.0]: https://github.com/perriera/ociutil/compare/v0.1.0...v0.2.0
+    [0.1.0]: https://github.com/perriera/ociutil/releases/tag/v0.1.0
 
 Also, while you are at, remove all entries to tags in changelog.md from **[0.2.0]** onward. As in there should only be two tag entries in your new project.
 
@@ -94,7 +94,7 @@ Change this:
 
     #### 0.3.0 (2021-09-03)
     ### Removed
-    - extras_oci source code
+    - ociutil source code
 
     #### 0.2.0 (2021-09-03)
     ### Added
@@ -112,9 +112,9 @@ To this:
 
 Then change the version information in **include/version.h** to 0.2.0
 
-    #define EXTRAS_OCI_VER_MAJOR 0
-    #define EXTRAS_OCI_VER_MINOR 2
-    #define EXTRAS_OCI_VER_PATCH 0
+    #define OCIUTIL_VER_MAJOR 0
+    #define OCIUTIL_VER_MINOR 2
+    #define OCIUTIL_VER_PATCH 0
 
 **Recommended**: You must make sure that the github tags you setup are always the same as the version number for the project. This has to be done by you manually, (at this point in time).
 
@@ -125,18 +125,18 @@ Then do the following:
     make
     cd ..
 
-This will re-create the project now with all references to extras_oci changed to extras_oci. To test this do the following:
+This will re-create the project now with all references to ociutil changed to ociutil. To test this do the following:
 
     build/run-unittests-<press tab>
 
 **Recommended**: The project now has been successfully created in git already. So add your first github tag:
 
-    git tag -a v0.2.0 -m "Renamed C++ template to: extras_oci"
+    git tag -a v0.2.0 -m "Renamed C++ template to: ociutil"
     git push origin v0.2.0
 
 ## Changelog.md & include/version.hpp
 
-Remember, when you go to make changes to your changelog.md you should maintain the version number of your project using 'include/version.hpp'. For example, in your version.hpp will look something similiar to the following but all referenced to EXTRAS_OCI will be changed to extras_oci
+Remember, when you go to make changes to your changelog.md you should maintain the version number of your project using 'include/version.hpp'. For example, in your version.hpp will look something similiar to the following but all referenced to OCIUTIL will be changed to ociutil
 
 **Recommended**: Inside your Github.com for your project, whenever you add a new tag, go the distance and make it a _release_ as well. Just go to your project on Github, select **tag**. Once the tags page is displayed left mouse click on the three dots you see for the newly added tag and select "Create Release"
 
@@ -175,7 +175,7 @@ This project is already setup for use with [Catch2](https://github.com/catchorg/
 
 ## JIRA/Confluence/Bitbucket support
 
-This project is already setup for use with [Jira (software)](<https://en.wikipedia.org/wiki/Jira_(software)>). Anyone familiar with writing JIRA entries as part of morning [SCRUM](<https://en.wikipedia.org/wiki/Scrum_(software_development)>) meetings, (or bi-weekly [SCRUM SPRINT](https://en.wikipedia.org/wiki/Scrum_Sprint) meetings) will find **perriera/extras_oci** to be well suited to the needs of JIRA/SCRUM/SPRINT.
+This project is already setup for use with [Jira (software)](<https://en.wikipedia.org/wiki/Jira_(software)>). Anyone familiar with writing JIRA entries as part of morning [SCRUM](<https://en.wikipedia.org/wiki/Scrum_(software_development)>) meetings, (or bi-weekly [SCRUM SPRINT](https://en.wikipedia.org/wiki/Scrum_Sprint) meetings) will find **perriera/ociutil** to be well suited to the needs of JIRA/SCRUM/SPRINT.
 
 ## Conclusion
 
