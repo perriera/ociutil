@@ -19,6 +19,8 @@
 #include <iostream>
  // #include <oracle/19.14/client64/occi.h>
 #include <occi.h>
+#include <oci.h>
+#include <ociutil/ocihandle.hpp>
 #include <bits/c++config.h>
 #include <ociutil/game/ChessGame.hpp>
 #include <pthread.h>
