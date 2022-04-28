@@ -27,7 +27,7 @@
 
 using namespace oracle::occi;
 using namespace std;
-using namespace extras;
+using namespace util;
 
 class  occidml
 {

@@ -22,7 +22,7 @@
 #include "../vendor/catch.hpp"
 #include "../vendor/fakeit.hpp"
 
-using namespace extras;
+using namespace util;
 using namespace fakeit;
 
 SCENARIO("Mock ChessGameInterface: toOctal", "[CHES-9]") {

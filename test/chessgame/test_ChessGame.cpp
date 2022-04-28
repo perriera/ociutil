@@ -22,7 +22,7 @@
 #include "../vendor/catch.hpp"
 
 using namespace std;
-using namespace extras;
+using namespace util;
 
 SCENARIO("Verify ChessGameInterface can be read PGN file", "[ChessGame]")
 {
