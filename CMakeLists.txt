@@ -154,7 +154,7 @@ file(GLOB_RECURSE OCIUTIL_SOURCE CONFIGURE_DEPENDS "${SOURCES}/*.cpp")
 
 add_library(${PROJECT_NAME} SHARED ${OCIUTIL_HEADERS} ${OCIUTIL_SOURCE})
 target_include_directories(${PROJECT_NAME} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include" ${ORACLE_INCLUDE})
-target_link_libraries(${PROJECT_NAME} PRIVATE stdc++fs extras occi clntsh Threads::Threads)
+target_link_libraries(${PROJECT_NAME} PRIVATE stdc++fs extras occi clntsh sisutil Threads::Threads)
 
 #
 # NOTE: declare unit test cases here all source should have adequate test cases whether they be mock
@@ -167,7 +167,7 @@ if (NOT MAKE_OCIUTIL_LIBRARY_ONLY)
     set(TEST_EXEC "run-unittests-${PROJECT_NAME}")
     add_executable(${TEST_EXEC} ${OCIUTIL_TESTS})
     target_include_directories(${TEST_EXEC} PUBLIC ${INCLUDES} ${ORACLE_INCLUDE})
-    target_link_libraries(${TEST_EXEC} PRIVATE ${PROJECT_NAME} stdc++fs extras occi clntsh Threads::Threads)
+    target_link_libraries(${TEST_EXEC} PRIVATE ${PROJECT_NAME} stdc++fs extras occi clntsh sisutil Threads::Threads)
   endif()
 endif()
 
@@ -180,7 +180,7 @@ endif()
 if( NOT MAKE_OCIUTIL_LIBRARY_ONLY OR MAKE_OCIUTIL_LIBRARY_TOOLS)
 add_executable(ociutil_app instances/main.cpp) 
 target_include_directories(ociutil_app PUBLIC ${INCLUDES} ${ORACLE_INCLUDE})
-target_link_libraries(ociutil_app PRIVATE ${PROJECT_NAME} stdc++fs extras occi clntsh Threads::Threads)
+target_link_libraries(ociutil_app PRIVATE ${PROJECT_NAME} stdc++fs extras occi clntsh sisutil Threads::Threads)
 endif()
 
 #

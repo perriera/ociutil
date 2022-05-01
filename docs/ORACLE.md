@@ -129,7 +129,7 @@ And make sure it says:
 
 ]20. In your CMakeLists.txt add **occi**  **chntsh** and **Threads::Threads** to any targets that need them
 
-	target_link_libraries(${TEST_EXEC} PRIVATE ${PROJECT_NAME} stdc++fs extras occi clntsh Threads::Threads)
+	target_link_libraries(${TEST_EXEC} PRIVATE ${PROJECT_NAME} stdc++fs extras occi clntsh sisutil Threads::Threads)
 
 > Now register the libraries with ldconfig
 
