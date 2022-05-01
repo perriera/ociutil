@@ -2,6 +2,7 @@
 #define _OCIHANDLE_H 1
 
 #include <oci.h>
+#include <iostream>
 
 #ifdef __cplusplus
 extern "C" {

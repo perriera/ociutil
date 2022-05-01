@@ -1,18 +1,4 @@
 /**
-* @file version.hpp
-* @author Matt Williams (mattltf@protonmail.com)
-* @brief Adds version support for Cmake script
-* @version 3.2.0
-* @date 2021-08-08
-*
-* @copyright (C) August 8, 2021 Matt Williams
-*
-*/
-
-#ifndef _OCIUTIL_VERSION_HPP
-#define _OCIUTIL_VERSION_HPP
-
-/**
  * @brief the "MIT/X Consortium License", (adapted for EXPARX.COM)
  *
  * Copyright (C) November 22, 2021 EXPARX INCORPORATED
@@ -30,11 +16,26 @@
  *
  */
 
-#define OCIUTIL_VER_MAJOR 1
-#define OCIUTIL_VER_MINOR 1
-#define OCIUTIL_VER_PATCH 0
+#include <iostream>
+#include <sisutil/game/ChessGame.hpp>
+#include <sisutil/Error.hpp>
 
-#define OCIUTIL_VERSION \
-  (OCIUTIL_VER_MAJOR * 10000 + OCIUTIL_VER_MINOR * 100 + OCIUTIL_VER_PATCH)
+#include "../vendor/catch.hpp"
 
-#endif// _OCIUTIL_VERSION_HPP
+using namespace std;
+using namespace util;
+
+class TestError : public Error {
+public:
+
+    virtual const   std::string text() const { return ""; };
+    virtual Error* clone() const { return nullptr; };
+
+};
+
+SCENARIO("Verify TestError", "[TestError]")
+{
+    TestError error;
+    REQUIRE(true);
+}
+

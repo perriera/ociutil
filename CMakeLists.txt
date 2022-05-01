@@ -125,20 +125,21 @@ print(STATUS "CMAKE_C_FLAGS: ${CMAKE_C_FLAGS}")
 # MAKE_SPDLOG_SHARED OFF" -- Matt Williams, October, 2021
 #
 CPMAddPackage(
-  NAME extras
-  GITHUB_REPOSITORY perriera/extras
-  VERSION 5.26.0
+  NAME sisutil
+  GITHUB_REPOSITORY perriera/sisutil
+  VERSION 0.3.0
   OPTIONS "MAKE_SPDLOG_SHARED OFF"
   OPTIONS "MAKE_EXTRAS_LIBRARY_ONLY ON"
+  OPTIONS "MAKE_SISUTIL_LIBRARY_ONLY ON"
 )
-if(extras_ADDED)
+if(sisutil_ADDED)
   #
   # NOTE:  enable c++11 to avoid compilation errors, and force spdlog into release build
   #
-  print(STATUS "Configuring extras build properties")
-  set_target_properties(extras PROPERTIES CMAKE_BUILD_TYPE Release)
+  print(STATUS "Configuring sisutil build properties")
+  set_target_properties(sisutil PROPERTIES CMAKE_BUILD_TYPE Release)
 else()
-  print(WARNING "extras was not configured properly")
+  print(WARNING "sisutil was not configured properly")
 endif()
 
 #

@@ -17,7 +17,6 @@
  */
 
 #include <iostream>
- // #include <oracle/19.14/client64/occi.h>
 #include <occi.h>
 #include <oci.h>
 #include <ociutil/ocihandle.hpp>
@@ -52,14 +51,6 @@ public:
         Environment::terminateEnvironment(env);
     }
 };
-
-SCENARIO("Verify Oracle Instant Client SDK can be compiled", "[OracleSDK]")
-{
-    oci::ChessGame game;
-    oci::ChessGameInterface& i = game;
-    i.moves();
-    REQUIRE(true);
-}
 
 SCENARIO("Verify occidml", "[OracleSDK]")
 {
