@@ -30,40 +30,12 @@ using namespace oracle::occi;
 using namespace std;
 using namespace util;
 
-class  occidml
+
+SCENARIO("Verify 2Oracle Instant Client SDK can be compiled", "[OracleSDK]")
 {
-private:
-
-    Environment* env = nullptr;
-    Connection* conn = nullptr;
-    Statement* stmt = nullptr;
-public:
-
-    occidml(string user, string passwd, string db)
-    {
-        env = Environment::createEnvironment(Environment::DEFAULT);
-        // conn = env->createConnection(user, passwd, db);
-    }
-
-    ~occidml()
-    {
-        // env->terminateConnection(conn);
-        Environment::terminateEnvironment(env);
-    }
-};
-
-SCENARIO("Verify occidml", "[OracleSDK]")
-{
-    string user = "scott";
-    string passwd = "tiger";
-    string db = "";
-    try {
-        cout << "occidml - Exhibiting simple insert, delete & update operations"
-            << endl;
-        occidml demo(user, passwd, db);
-        cout << "Displaying all records before any operation" << endl;
-    }
-    catch (SQLException& ex) {
-        cout << ex.getMessage() << endl;
-    }
+    oci::ChessGame game;
+    oci::ChessGameInterface& i = game;
+    i.moves();
+    REQUIRE(true);
 }
+

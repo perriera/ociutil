@@ -125,20 +125,21 @@ print(STATUS "CMAKE_C_FLAGS: ${CMAKE_C_FLAGS}")
 # MAKE_SPDLOG_SHARED OFF" -- Matt Williams, October, 2021
 #
 CPMAddPackage(
-  NAME extras
-  GITHUB_REPOSITORY perriera/extras
-  VERSION 5.26.0
+  NAME sisutil
+  GITHUB_REPOSITORY perriera/sisutil
+  VERSION 0.4.2
   OPTIONS "MAKE_SPDLOG_SHARED OFF"
   OPTIONS "MAKE_EXTRAS_LIBRARY_ONLY ON"
+  OPTIONS "MAKE_SISUTIL_LIBRARY_ONLY ON"
 )
-if(extras_ADDED)
+if(sisutil_ADDED)
   #
   # NOTE:  enable c++11 to avoid compilation errors, and force spdlog into release build
   #
-  print(STATUS "Configuring extras build properties")
-  set_target_properties(extras PROPERTIES CMAKE_BUILD_TYPE Release)
+  print(STATUS "Configuring sisutil build properties")
+  set_target_properties(sisutil PROPERTIES CMAKE_BUILD_TYPE Release)
 else()
-  print(WARNING "extras was not configured properly")
+  print(WARNING "sisutil was not configured properly")
 endif()
 
 #
@@ -154,7 +155,7 @@ file(GLOB_RECURSE OCIUTIL_SOURCE CONFIGURE_DEPENDS "${SOURCES}/*.cpp")
 
 add_library(${PROJECT_NAME} SHARED ${OCIUTIL_HEADERS} ${OCIUTIL_SOURCE})
 target_include_directories(${PROJECT_NAME} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include" ${ORACLE_INCLUDE})
-target_link_libraries(${PROJECT_NAME} PRIVATE stdc++fs extras occi clntsh Threads::Threads)
+target_link_libraries(${PROJECT_NAME} PRIVATE stdc++fs extras occi clntsh sisutil Threads::Threads)
 
 #
 # NOTE: declare unit test cases here all source should have adequate test cases whether they be mock
@@ -167,7 +168,7 @@ if (NOT MAKE_OCIUTIL_LIBRARY_ONLY)
     set(TEST_EXEC "run-unittests-${PROJECT_NAME}")
     add_executable(${TEST_EXEC} ${OCIUTIL_TESTS})
     target_include_directories(${TEST_EXEC} PUBLIC ${INCLUDES} ${ORACLE_INCLUDE})
-    target_link_libraries(${TEST_EXEC} PRIVATE ${PROJECT_NAME} stdc++fs extras occi clntsh Threads::Threads)
+    target_link_libraries(${TEST_EXEC} PRIVATE ${PROJECT_NAME} stdc++fs extras occi clntsh sisutil Threads::Threads)
   endif()
 endif()
 
@@ -180,7 +181,7 @@ endif()
 if( NOT MAKE_OCIUTIL_LIBRARY_ONLY OR MAKE_OCIUTIL_LIBRARY_TOOLS)
 add_executable(ociutil_app instances/main.cpp) 
 target_include_directories(ociutil_app PUBLIC ${INCLUDES} ${ORACLE_INCLUDE})
-target_link_libraries(ociutil_app PRIVATE ${PROJECT_NAME} stdc++fs extras occi clntsh Threads::Threads)
+target_link_libraries(ociutil_app PRIVATE ${PROJECT_NAME} stdc++fs extras occi clntsh sisutil Threads::Threads)
 endif()
 
 #
