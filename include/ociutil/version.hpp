@@ -30,8 +30,8 @@
  *
  */
 
-#define OCIUTIL_VER_MAJOR 1
-#define OCIUTIL_VER_MINOR 2
+#define OCIUTIL_VER_MAJOR 0
+#define OCIUTIL_VER_MINOR 3
 #define OCIUTIL_VER_PATCH 0
 
 #define OCIUTIL_VERSION \
