@@ -5,8 +5,8 @@
 > and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).</br>
 > To add a tag to the git repository do:
 >
-> > git tag -a v0.4.0 -m "Using sisutil v0.5.0"</br>
-> > git push origin v0.4.0
+> > git tag -a v0.5.0 -m "All code ported"</br>
+> > git push origin v0.5.0
 
 IMPORTANT:
 
@@ -31,6 +31,10 @@ Correct URL for github, (for source compare)</br>
 Adding mock test cases </br>
 Adding unit test cases </br>
 Updated README.md accordingly</br>
+
+#### 0.5.0 (2021-05-04)
+### Added
+- All code ported
 
 #### 0.4.0 (2021-05-04)
 ### Upgrades
@@ -103,7 +107,8 @@ Updated README.md accordingly</br>
 ### Removed
 - Conan package manager deprecated
 
-[unreleased]: https://github.com/perriera/ociutil/compare/v0.4.0...HEAD
+[unreleased]: https://github.com/perriera/ociutil/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/perriera/ociutil/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/perriera/ociutil/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/perriera/ociutil/compare/v1.2.0...v0.3.0
 [1.2.0]: https://github.com/perriera/ociutil/compare/v1.1.0...v1.2.0
