@@ -65,7 +65,7 @@ OCISISError::OCISISError(const std::string& who, const  std::string& w, const OC
 
 // TODO: get rid of this. The dummy parameter is used only to give it a different signature
 //       otherwise it's just the first c'tor.
-OCISISError::OCISISError(const std::string& who, const std::string& w, const OCIHANDLE* dummy, const OCIHANDLE* hOCI)
+OCISISError::OCISISError(const std::string& who, const std::string& w, const OCIHANDLE*, const OCIHANDLE* hOCI)
 	: Error((Error::ErrorStatus)-1) {
 	ErrorStatusValues = OK;
 	OCISISError(who, w, hOCI);
