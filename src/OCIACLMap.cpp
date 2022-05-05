@@ -17,7 +17,7 @@ const char* OCIACLMap::SQLlookup = "SELECT GROUPUUIDNAME FROM V222.SIS_ACCESS_CO
 
 OCIVariableInfo OCIACLMap::lookupMarshInVector[] = {
 	/* RPCName                   */  {0, 128, 'S'}
-	/*                           */ ,{0,   0, }
+	/*                           */ ,{0,   0, ' '}
 };
 
 OCIVariableInfo OCIACLMap::lookupMarshOutVector[] = {

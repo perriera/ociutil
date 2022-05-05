@@ -35,11 +35,11 @@ class  occidml
 private:
 
     Environment* env = nullptr;
-    Connection* conn = nullptr;
-    Statement* stmt = nullptr;
+    // Connection* conn = nullptr;
+    // Statement* stmt = nullptr;
 public:
 
-    occidml(string user, string passwd, string db)
+    occidml(string, string, string)
     {
         env = Environment::createEnvironment(Environment::DEFAULT);
         // conn = env->createConnection(user, passwd, db);

@@ -7,7 +7,7 @@
 #include <sisutil/ACLRep.hpp>
 
 class ACL;
-class OCIVariableInfo;
+struct OCIVariableInfo;
 
 class OCIACLMap : public ACLRep {
 public:

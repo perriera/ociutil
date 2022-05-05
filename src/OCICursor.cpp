@@ -269,7 +269,7 @@ OCISISError OCICursor::DefineRaw(int sequence_no, unsigned char* field_location,
    return retVal;
 }
 
-OCISISError OCICursor::DefineInt(int sequence_no, long* field_location, const short* nf) {
+OCISISError OCICursor::DefineInt(int sequence_no, long* field_location, const short*) {
    if (getenv("SIS_OCI_DEBUG"))
       std::cerr << "OCICursor::DefineInt(): --004-- entering " << std::endl;
    OCISISError retVal;
@@ -290,7 +290,7 @@ OCISISError OCICursor::DefineInt(int sequence_no, long* field_location, const sh
  -1: Oracle assigns a NULL to the column, ignoring the value of the input variable.
  >=0: Oracle assigns the value of the input variable to the column.
  */
-OCISISError OCICursor::BindString(int field, const unsigned char* field_location, int field_size, const short* nf) {
+OCISISError OCICursor::BindString(int field, const unsigned char* field_location, int field_size, const short*) {
    OCISISError retVal;
    sb2 indp = 0;
    if (getenv("SIS_OCI_DEBUG"))
@@ -308,7 +308,7 @@ OCISISError OCICursor::BindString(int field, const unsigned char* field_location
    return retVal;
 }
 
-OCISISError OCICursor::BindString(const char* field_literal, const unsigned char* field_location, int field_size, const short* nf) {
+OCISISError OCICursor::BindString(const char* field_literal, const unsigned char* field_location, int field_size, const short*) {
    OCISISError retVal;
    sb2 indp = 0;
    if (getenv("SIS_OCI_DEBUG"))
@@ -334,7 +334,7 @@ OCISISError OCICursor::BindString(const char* field_literal, const unsigned char
  * @param field_size
  * @param nf
  */
-OCISISError OCICursor::BindChar(int field, const unsigned char* field_location, int field_size, const short* nf) {
+OCISISError OCICursor::BindChar(int field, const unsigned char* field_location, int field_size, const short*) {
    OCISISError retVal;
    sb2 indp = 0;
    if (getenv("SIS_OCI_DEBUG"))
@@ -360,7 +360,7 @@ OCISISError OCICursor::BindChar(int field, const unsigned char* field_location, 
  * @param nf (not used)
  */
 OCISISError OCICursor::BindChar(const char* field_literal, const unsigned char* field_location, int field_size,
-   const short* nf) {
+   const short*) {
    OCISISError retVal;
    sb2 indp = 0;
 
@@ -386,7 +386,7 @@ OCISISError OCICursor::BindChar(const char* field_literal, const unsigned char* 
    return retVal;
 }
 
-OCISISError OCICursor::BindRaw(const char* field_literal, const unsigned char* field_location, int field_size, const short* nf) {
+OCISISError OCICursor::BindRaw(const char* field_literal, const unsigned char* field_location, int field_size, const short*) {
    if (getenv("SIS_OCI_DEBUG"))
       std::cerr << "OCICursor::BindRaw(char): --014-- called, field_literal=" << field_literal
       << ", field_location=" << (char*)field_location << ", field_size=" << field_size << std::endl;
@@ -405,7 +405,7 @@ OCISISError OCICursor::BindRaw(const char* field_literal, const unsigned char* f
    return retVal;
 }
 
-OCISISError OCICursor::BindRaw(int field, const unsigned char* field_location, int field_size, const short* nf) {
+OCISISError OCICursor::BindRaw(int field, const unsigned char* field_location, int field_size, const short*) {
    if (getenv("SIS_OCI_DEBUG"))
       std::cerr << "OCICursor::BindRaw(int): --016-- called, field=" << field
       << ", field_location=" << (char*)field_location << ", field_size=" << field_size << std::endl;
