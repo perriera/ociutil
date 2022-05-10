@@ -4,7 +4,30 @@
 #ifndef _OCIACLMAP_H
 #define _OCIACLMAP_H 1
 
+#include <iostream>
+#include <extras/interfaces.hpp>
 #include <sisutil/ACLRep.hpp>
+
+
+/**
+ * @brief OCIACLMapInterface
+ *
+ */
+interface OCIACLMapInterface
+{
+
+	/**
+	 * @brief moves()
+	 * @return all the chess moves of the given chess game
+	 */
+	virtual ACL* lookup(const std::string& key) const pure;
+
+};
+
+/**
+ * @brief OCIACLMap
+ *
+ */
 
 class ACL;
 struct OCIVariableInfo;
@@ -28,6 +51,7 @@ private:
 	static OCIVariableInfo lookupACLResult[];
 	static const char* SQLLookupACL;
 };
+
 
 // Name: OCIACLMap
 // Documentation: DCE Access control list repository.
