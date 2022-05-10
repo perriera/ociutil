@@ -17,7 +17,7 @@
  */
 
 #include <iostream>
-#include <ociutil/game/ChessGame.hpp>
+#include <ociutil/interfaces/IOCIACLMap.hpp>
 
 #include "../vendor/catch.hpp"
 #include "../vendor/fakeit.hpp"
@@ -25,12 +25,16 @@
 using namespace util;
 using namespace fakeit;
 
-SCENARIO("Mock OCIACLMapInterface: toOctal", "[YSTLCMP-7]") {
+SCENARIO("Mock IOCIACLMap: lookup", "[YSTLCMP-7]") {
 
-    Mock<oci::ChessGameInterface> mock;
-    When(Method(mock, moves)).Return();
+    Mock<oci::OCIACLMapInterface> mock;
+    When(Method(mock, lookup)).Return();
+    When(Method(mock, lookup))
+        .AlwaysDo([](const std::string& key) {
+        return nullptr;
+            });
 
-    oci::ChessGameInterface& i = mock.get();
-    i.moves();
-    Verify(Method(mock, moves));
+    oci::OCIACLMapInterface& i = mock.get();
+    REQUIRE(i.lookup("test") == nullptr);
+    Verify(Method(mock, lookup));
 }
